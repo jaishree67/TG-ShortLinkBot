@@ -46,7 +46,7 @@ async def link_handler(_, update):
         message = f"Something went wrong \n{Err}"
         await update.reply(message, quote=True)
         return
-    message = f"Here is your shortlink\n {shortened_url}"
+    message = f"Here is your shortlink\n `{shortened_url}`"
     markup = InlineKeyboardMarkup([[InlineKeyboardButton("Link 🔗", url=shortened_url)]])
     # i don't think this bot with get sending message error so no need of exceptions
     await update.reply_text(text=message, reply_markup=markup, quote=True)
